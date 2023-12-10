@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[Unit]
+Description=Add cloudflare ips to iptables
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sh /usr/local/src/cloudflare-ip.sh
+
+[Install]
+WantedBy=multi-user.target
